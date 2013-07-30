@@ -22,7 +22,7 @@
 # Script copyright (C) 2013 Blender Foundation
 
 __all__ = (
-    "pasrse",
+    "parse",
     )
 
 import struct
@@ -127,9 +127,11 @@ def read_chunk(read, tell, level):
     return token_id, token_prop_type, token_prop_data, token_children
 
 
-def pasrse(f):
+def parse(fn):
     import time
     t = time.time()
+
+    f = open(fn, 'rb')
     read = f.read
     tell = f.tell
 
