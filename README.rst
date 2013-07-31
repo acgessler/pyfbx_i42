@@ -5,6 +5,8 @@ Currently this project contains ``pyfbx/parse_bin.py``, a simple but functional 
 
 It doesn't (yet) contain utility functions for dealing with the data.
 
+This script is based on assimp's ``FBXBinaryTokenizer.cpp``
+
 What Works
 ----------
 - tested FBX files from 2006 - 2012 _(parsing data seems not to depend on exact versions)_
