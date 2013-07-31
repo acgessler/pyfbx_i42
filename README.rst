@@ -9,7 +9,8 @@ This script is based on assimp's ``FBXBinaryTokenizer.cpp``
 
 What Works
 ----------
-- tested FBX files from 2006 - 2012 _(parsing data seems not to depend on exact versions)_
+- tested FBX files from 2006 - 2012
+  *(parsing data seems not to depend on exact versions)*
 - all known datatypes (float/int arrays, loading binary data, strings etc).
 - zlib compression
 
