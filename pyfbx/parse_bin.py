@@ -34,7 +34,6 @@ import zlib
 # this NUL record is 13 bytes long.
 _BLOCK_SENTINEL_LENGTH = 13
 _BLOCK_SENTINEL_DATA = (b'\0' * _BLOCK_SENTINEL_LENGTH)
-_DEBUG = True
 _IS_BIG_ENDIAN = (__import__("sys").byteorder != 'little')
 from collections import namedtuple
 FBXElem = namedtuple("FBXElem", ("id", "props", "props_type", "elems"))
