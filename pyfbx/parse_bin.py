@@ -26,7 +26,6 @@ __all__ = (
     )
 
 from struct import unpack
-from collections import namedtuple
 import array
 import zlib
 
@@ -36,10 +35,10 @@ import zlib
 _BLOCK_SENTINEL_LENGTH = 13
 _BLOCK_SENTINEL_DATA = (b'\0' * _BLOCK_SENTINEL_LENGTH)
 _DEBUG = True
-_IS_LITTLE_ENDIAN = (__import__("sys").byteorder == 'little')
-
-
+_IS_BIG_ENDIAN = (__import__("sys").byteorder != 'little')
+from collections import namedtuple
 FBXElem = namedtuple("FBXNode", ("id", "props", "props_type", "elems"))
+del namedtuple
 
 
 def read_uint(read):
@@ -71,8 +70,8 @@ def unpack_array(read, array_type, array_stride, array_byteswap):
     assert(length * array_stride == len(data))
 
     data_array = array.array(array_type, data)
-    #if array_byteswap and _IS_LITTLE_ENDIAN:
-    #    data_array.byteswap()
+    if array_byteswap and _IS_BIG_ENDIAN:
+        data_array.byteswap()
     return data_array
 
 
@@ -85,7 +84,6 @@ read_data_dict = {
     b'L'[0]: lambda read: unpack(b'<q', read(8))[0],  # 64 bit int
     b'R'[0]: lambda read: read(read_uint(read)),      # binary data
     b'S'[0]: lambda read: read(read_uint(read)),      # string data
-
     b'f'[0]: lambda read: unpack_array(read, 'f', 4, False),  # array (float)
     b'i'[0]: lambda read: unpack_array(read, 'i', 4, True),   # array (int)
     b'd'[0]: lambda read: unpack_array(read, 'd', 8, False),  # array (double)
@@ -114,7 +112,6 @@ def read_elem(read, tell, level):
         elem_props_data[i] = read_data_dict[data_type](read)
         elem_props_type[i] = data_type
 
-    # check if we have nested data
     #~ print("    " * level,
     #~       "%r: %r ~ %r" % (elem_id, elem_props_data, elem_props_type))
     if tell() < end_offset:
@@ -146,7 +143,6 @@ def parse(fn):
         raise IOError("Invalid header")
 
     read(HEAD_OFFSET - tell())
-
     root_elems = []
 
     while True:
