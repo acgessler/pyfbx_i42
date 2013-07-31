@@ -1,5 +1,20 @@
 pyfbx_i42
 =========
 
-Python FBX reader API
+Currently this project contains ``pyfbx/parse_bin.py``, a simple but functional parser for binary FBX data, which can load in the FBX hierarchy.
 
+It doesn't (yet) contain utility functions for dealing with the data.
+
+This script is based on assimp's ``FBXBinaryTokenizer.cpp``
+
+What Works
+----------
+- tested FBX files from 2006 - 2012
+  *(parsing data seems not to depend on exact versions)*
+- all known datatypes (float/int arrays, loading binary data, strings etc).
+- zlib compression
+
+What Doesn't Work
+-----------------
+- ASCII FBX
+- todo...
