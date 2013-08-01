@@ -23,6 +23,7 @@
 
 __all__ = (
     "parse",
+    "FBXElem",
     )
 
 from struct import unpack
@@ -90,7 +91,7 @@ read_data_dict = {
     }
 
 
-def read_elem(read, tell, level):
+def read_elem(read, tell, use_namedtuple):
     # [0] the offset at which this block ends
     # [1] the number of properties in the scope
     # [2] the length of the property list
@@ -111,11 +112,9 @@ def read_elem(read, tell, level):
         elem_props_data[i] = read_data_dict[data_type](read)
         elem_props_type[i] = data_type
 
-    #~ print("    " * level,
-    #~       "%r: %r ~ %r" % (elem_id, elem_props_data, elem_props_type))
     if tell() < end_offset:
         while tell() < (end_offset - _BLOCK_SENTINEL_LENGTH):
-            elem_subtree.append(read_elem(read, tell, level + 1))
+            elem_subtree.append(read_elem(read, tell, use_namedtuple))
 
         if read(_BLOCK_SENTINEL_LENGTH) != _BLOCK_SENTINEL_DATA:
             raise IOError("failed to read nested block sentinel, "
@@ -124,31 +123,35 @@ def read_elem(read, tell, level):
     if tell() != end_offset:
         raise IOError("scope length not reached, something is wrong")
 
-    return FBXElem(elem_id, elem_props_data, elem_props_type, elem_subtree)
+    args = (elem_id, elem_props_data, elem_props_type, elem_subtree)
+    return FBXElem(*args) if use_namedtuple else args
 
 
-def parse(fn):
+def parse(fn, use_namedtuple=True):
     import time
     t = time.time()
 
-    f = open(fn, 'rb')
-    read = f.read
-    tell = f.tell
-
-    # after the text, but we ignore for now: b'  \x00\x1a'
-    HEAD_MAGIC = b'Kaydara FBX Binary'
-    HEAD_OFFSET = 27
-    if read(len(HEAD_MAGIC)) != HEAD_MAGIC:
-        raise IOError("Invalid header")
-
-    read(HEAD_OFFSET - tell())
     root_elems = []
 
-    while True:
-        elem = read_elem(read, tell, 0)
-        if elem is None:
-            break
-        root_elems.append(elem)
+    with open(fn, 'rb') as f:
+        read = f.read
+        tell = f.tell
+
+        # after the text, but we ignore for now: b'  \x00\x1a'
+        HEAD_MAGIC = b'Kaydara FBX Binary'
+        HEAD_OFFSET = 27
+        if read(len(HEAD_MAGIC)) != HEAD_MAGIC:
+            raise IOError("Invalid header")
+
+        read(HEAD_OFFSET - tell())
+
+        while True:
+            elem = read_elem(read, tell, use_namedtuple)
+            if elem is None:
+                break
+            root_elems.append(elem)
 
     print("done in %.4f sec" % (time.time() - t))
-    return FBXElem(b'', [], bytearray(0), root_elems)
+
+    args = (b'', [], bytearray(0), root_elems)
+    return FBXElem(*args) if use_namedtuple else args
