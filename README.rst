@@ -1,7 +1,8 @@
 pyfbx_i42
 =========
 
-Currently this project contains ``pyfbx/parse_bin.py``, a simple but functional parser for binary FBX data, which can load in the FBX hierarchy.
+Currently this project contains ``pyfbx/parse_bin.py``,
+a simple but functional parser for binary FBX data, which can load in the FBX hierarchy.
 
 It doesn't (yet) contain utility functions for dealing with the data.
 
@@ -17,4 +18,13 @@ What Works
 What Doesn't Work
 -----------------
 - ASCII FBX
-- todo...
+- The data type 'b',
+  *(aparently nobody knows what this is for, need to investigate)*.
+
+
+Examples
+--------
+
+Currently there is a simple example script called ``fbx2json.py``
+this script will write a ``JSON`` file for each ``FBX`` passed,
+Even though its intended mainly as an example it may prove useful in some situations.
