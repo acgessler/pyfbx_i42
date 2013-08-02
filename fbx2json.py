@@ -21,6 +21,23 @@
 
 # Script copyright (C) 2013 Campbell Barton
 
+"""
+USAGE:
+
+   fbx2json [FILES]...
+
+This script will write a JSON file for each FBX argument given.
+
+The JSON data is formatted into a list of nested triplets:
+
+   [id, [data, ...], [subtree, ...]]
+
+Where each list may be empty, and the items in
+the subtree are formatted the same way.
+
+Note that key:value pairs aren't used since the id's are not
+ensured to be unique.
+"""
 from pyfbx import parse_bin
 from pyfbx import data_types
 import json
@@ -86,6 +103,10 @@ def fbx2json(fn):
 
 def main():
     import sys
+
+    if "--help" in sys.argv:
+        print(__doc__)
+        return
 
     for arg in sys.argv[1:]:
         try:
