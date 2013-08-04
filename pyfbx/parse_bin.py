@@ -128,8 +128,8 @@ def read_elem(read, tell, use_namedtuple):
 
 
 def parse(fn, use_namedtuple=True):
-    import time
-    t = time.time()
+    # import time
+    # t = time.time()
 
     root_elems = []
 
@@ -137,13 +137,11 @@ def parse(fn, use_namedtuple=True):
         read = f.read
         tell = f.tell
 
-        # after the text, but we ignore for now: b'  \x00\x1a'
-        HEAD_MAGIC = b'Kaydara FBX Binary'
-        HEAD_OFFSET = 27
+        HEAD_MAGIC = b'Kaydara FBX Binary\x20\x20\x00\x1a\x00'
         if read(len(HEAD_MAGIC)) != HEAD_MAGIC:
             raise IOError("Invalid header")
 
-        read(HEAD_OFFSET - tell())
+        fbx_version = read_uint(read)
 
         while True:
             elem = read_elem(read, tell, use_namedtuple)
@@ -151,7 +149,7 @@ def parse(fn, use_namedtuple=True):
                 break
             root_elems.append(elem)
 
-    print("done in %.4f sec" % (time.time() - t))
+    # print("done in %.4f sec" % (time.time() - t))
 
     args = (b'', [], bytearray(0), root_elems)
-    return FBXElem(*args) if use_namedtuple else args
+    return FBXElem(*args) if use_namedtuple else args, fbx_version
