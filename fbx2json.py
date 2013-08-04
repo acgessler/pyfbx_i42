@@ -22,26 +22,55 @@
 # Script copyright (C) 2013 Campbell Barton
 
 """
-USAGE:
+Usage
+=====
 
    fbx2json [FILES]...
 
 This script will write a JSON file for each FBX argument given.
 
-The JSON data is formatted into a list of nested triplets:
 
-   [id, [data, ...], [subtree, ...]]
+Output
+======
+
+The JSON data is formatted into a list of nested lists of 4 items:
+
+   ``[id, [data, ...], "data_types", [subtree, ...]]``
 
 Where each list may be empty, and the items in
 the subtree are formatted the same way.
 
+data_types is a string, aligned with data that spesifies a type
+for each property.
+
+The types are as follows:
+
+* 'Y': - INT16
+* 'C': - BOOL
+* 'I': - INT32
+* 'F': - FLOAT32
+* 'D': - FLOAT64
+* 'L': - INT64
+* 'R': - BYTES
+* 'S': - STRING
+* 'f': - FLOAT32_ARRAY
+* 'i': - INT32_ARRAY
+* 'd': - FLOAT64_ARRAY
+* 'l': - INT64_ARRAY
+* 'b': - UNKNOWN
+
 Note that key:value pairs aren't used since the id's are not
 ensured to be unique.
 """
+
 from pyfbx import parse_bin
 from pyfbx import data_types
 import json
 import array
+
+
+# ----------------------------------------------------------------------------
+# JSON Converter
 
 
 def fbx2json_property_as_string(prop, prop_type):
@@ -69,8 +98,9 @@ def fbx2json_properties_as_string(fbx_elem):
 
 def fbx2json_recurse(fw, fbx_elem, ident, is_last):
     fbx_elem_id = fbx_elem.id.decode('utf-8')
-    fw(ident + '["%s", ' % fbx_elem_id)
+    fw('%s["%s", ' % (ident, fbx_elem_id))
     fw('[%s], ' % fbx2json_properties_as_string(fbx_elem))
+    fw('"%s", ' % (fbx_elem.props_type.decode('ascii')))
 
     fw('[')
     if fbx_elem.elems:
@@ -87,10 +117,11 @@ def fbx2json_recurse(fw, fbx_elem, ident, is_last):
 def fbx2json(fn):
     import os
 
-    fn_json = os.path.splitext(fn)[0] + ".json"
-    print("Writing: %r..." % fn_json)
+    fn_json = "%s.json" % os.path.splitext(fn)[0]
+    print("Writing: %r " % fn_json, end="")
+    fbx_root_elem, fbx_version = parse_bin.parse(fn, use_namedtuple=True)
+    print("(Version %d) ..." % fbx_version)
 
-    fbx_root_elem = parse_bin.parse(fn, use_namedtuple=True)
     with open(fn_json, 'w', encoding="ascii", errors='xmlcharrefreplace') as f:
         fw = f.write
         fw('[\n')
@@ -100,6 +131,9 @@ def fbx2json(fn):
                              fbx_elem_sub is fbx_root_elem.elems[-1])
         fw(']\n')
 
+
+# ----------------------------------------------------------------------------
+# Command Line
 
 def main():
     import sys
