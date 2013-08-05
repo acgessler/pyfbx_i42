@@ -12,7 +12,6 @@ from pyfbx import parse_bin, data_types
 
 # /src/blender/blender.bin --background --env-system-scripts /src/blender/release/scripts --enable-autoexec --python /src/pyfbx_i42/blender_test.py
 
-# fn = "/root/untitled_bin.fbx"
 
 # -----
 # Utils
@@ -278,7 +277,7 @@ def blen_read_texture(fbx_obj, basedir, texture_cache):
 
 
 def main():
-    elem_root = parse_bin.parse(fn)
+    elem_root, version = parse_bin.parse(fn)
     basedir = os.path.dirname(fn)
     texture_cache = {}
 
@@ -411,8 +410,10 @@ def main():
 
                         if lnk_type == b'DiffuseColor':
                             mtex.use_map_color_diffuse = True
+                            mtex.blend_type = 'MULTIPLY'
                         elif lnk_type == b'SpecularColor':
                             mtex.use_map_color_spec = True
+                            mtex.blend_type = 'MULTIPLY'
                         elif lnk_type == b'ReflectionColor':
                             mtex.use_map_raymir = True  # correct?
                         elif lnk_type == b'TransparentColor':
