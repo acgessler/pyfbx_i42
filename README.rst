@@ -26,5 +26,5 @@ Examples
 --------
 
 Currently there is a simple example script called ``fbx2json.py``
-this script will write a ``JSON`` file for each ``FBX`` passed,
+this standalone Python script will write a ``JSON`` file for each ``FBX`` passed,
 Even though its intended mainly as an example it may prove useful in some situations.
