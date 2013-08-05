@@ -9,8 +9,8 @@
             ["Month", [8], "I", []],
             ["Day", [5], "I", []],
             ["Hour", [10], "I", []],
-            ["Minute", [21], "I", []],
-            ["Second", [57], "I", []],
+            ["Minute", [27], "I", []],
+            ["Second", [44], "I", []],
             ["Millisecond", [0], "I", []]]],
         ["Creator", ["FBX SDK/FBX Plugins version 2011.3.1"], "S", []],
         ["SceneInfo", ["GlobalInfo::SceneInfo", "UserData"], "SS", [
@@ -38,8 +38,8 @@
                 ["P", ["LastSaved|ApplicationName", "KString", "", "", ""], "SSSSS", []],
                 ["P", ["LastSaved|ApplicationVersion", "KString", "", "", ""], "SSSSS", []],
                 ["P", ["LastSaved|DateTime_GMT", "DateTime", "", "", ""], "SSSSS", []]]]]]]],
-    ["FileId", ["-\\xb1(\\xe0\\xbd/\\xc7\\xcd\\xb0\\xc7\\xbc/\\xaa+\\xfe\\xf2"], "R", []],
-    ["CreationTime", ["2013-08-05 10:21:57:000"], "S", []],
+    ["FileId", [",\\xb3*\\xe2\\xbf-\\xc5\\xcf\\xb2\\xc5\\xbe-\\xa8)\\xfc\\xf6"], "R", []],
+    ["CreationTime", ["2013-08-05 10:27:44:000"], "S", []],
     ["Creator", ["FBX SDK/FBX Plugins version 2011.3.1 build=20100929"], "S", []],
     ["GlobalSettings", [], "", [
         ["Version", [1000], "I", []],
@@ -61,15 +61,15 @@
             ["P", ["TimeSpanStop", "KTime", "Time", "", 479181389250], "SSSSL", []]]]]],
     ["Documents", [], "", [
         ["Count", [1], "I", []],
-        ["Document", [161190568, "", "Scene"], "LSS", [
+        ["Document", [151925416, "", "Scene"], "LSS", [
             ["Properties70", [], "", [
                 ["P", ["SourceObject", "object", "", ""], "SSSS", []],
-                ["P", ["ActiveAnimStackName", "KString", "", "", "Default Take"], "SSSSS", []]]],
+                ["P", ["ActiveAnimStackName", "KString", "", "", ""], "SSSSS", []]]],
             ["RootNode", [0], "L", []]]]]],
     ["References", [], "", []],
     ["Definitions", [], "", [
         ["Version", [100], "I", []],
-        ["Count", [50], "I", []],
+        ["Count", [12], "I", []],
         ["ObjectType", ["GlobalSettings"], "S", [
             ["Count", [1], "I", []]]],
         ["ObjectType", ["Model"], "S", [
@@ -179,35 +179,9 @@
                     ["P", ["DisplacementColor", "ColorRGB", "Color", "", 0.0, 0.0, 0.0], "SSSSDDD", []],
                     ["P", ["DisplacementFactor", "double", "Number", "", 1.0], "SSSSD", []]]]]]]],
         ["ObjectType", ["Pose"], "S", [
-            ["Count", [1], "I", []]]],
-        ["ObjectType", ["AnimationStack"], "S", [
-            ["Count", [1], "I", []],
-            ["PropertyTemplate", ["KFbxAnimStack"], "S", [
-                ["Properties70", [], "", [
-                    ["P", ["Description", "KString", "", "", ""], "SSSSS", []],
-                    ["P", ["LocalStart", "KTime", "Time", "", 0], "SSSSL", []],
-                    ["P", ["LocalStop", "KTime", "Time", "", 0], "SSSSL", []],
-                    ["P", ["ReferenceStart", "KTime", "Time", "", 0], "SSSSL", []],
-                    ["P", ["ReferenceStop", "KTime", "Time", "", 0], "SSSSL", []]]]]]]],
-        ["ObjectType", ["AnimationLayer"], "S", [
-            ["Count", [1], "I", []],
-            ["PropertyTemplate", ["KFbxAnimLayer"], "S", [
-                ["Properties70", [], "", [
-                    ["P", ["Weight", "Number", "", "A+", 100.0], "SSSSD", []],
-                    ["P", ["Mute", "bool", "", "", 0], "SSSSI", []],
-                    ["P", ["Solo", "bool", "", "", 0], "SSSSI", []],
-                    ["P", ["Lock", "bool", "", "", 0], "SSSSI", []],
-                    ["P", ["Color", "ColorRGB", "Color", "", 0.8, 0.8, 0.8], "SSSSDDD", []],
-                    ["P", ["BlendMode", "enum", "", "", 0], "SSSSI", []],
-                    ["P", ["RotationAccumulationMode", "enum", "", "", 0], "SSSSI", []],
-                    ["P", ["ScaleAccumulationMode", "enum", "", "", 0], "SSSSI", []],
-                    ["P", ["BlendModeBypass", "ULongLong", "", "", 0], "SSSSL", []]]]]]]],
-        ["ObjectType", ["AnimationCurveNode"], "S", [
-            ["Count", [9], "I", []]]],
-        ["ObjectType", ["AnimationCurve"], "S", [
-            ["Count", [27], "I", []]]]]],
+            ["Count", [1], "I", []]]]]],
     ["Objects", [], "", [
-        ["NodeAttribute", [161217656, "::NodeAttribute", "CameraSwitcher"], "LSS", [
+        ["NodeAttribute", [151952504, "::NodeAttribute", "CameraSwitcher"], "LSS", [
             ["Properties70", [], "", [
                 ["P", ["Camera Index", "Integer", "", "A+", 100], "SSSSI", []]]],
             ["Version", [101], "I", []],
@@ -215,7 +189,7 @@
             ["CameraId", [100], "I", []],
             ["CameraName", [100], "I", []],
             ["CameraIndexName", [], "", []]]],
-        ["NodeAttribute", [161430624, "::NodeAttribute", "Camera"], "LSS", [
+        ["NodeAttribute", [152157168, "::NodeAttribute", "Camera"], "LSS", [
             ["Properties70", [], "", [
                 ["P", ["Position", "Vector", "", "A+", 7.481132, 5.343665, 6.50764], "SSSSDDD", []],
                 ["P", ["UpVector", "Vector", "", "A+", -0.31737, 0.895343, -0.312469], "SSSSDDD", []],
@@ -245,13 +219,13 @@
             ["ShowAudio", [0], "I", []],
             ["AudioColor", [0.0, 1.0, 0.0], "DDD", []],
             ["CameraOrthoZoom", [1.0], "D", []]]],
-        ["NodeAttribute", [161425288, "::NodeAttribute", "Light"], "LSS", [
+        ["NodeAttribute", [152159720, "::NodeAttribute", "Light"], "LSS", [
             ["Properties70", [], "", [
                 ["P", ["DecayStart", "Number", "", "A+", 30.0], "SSSSD", []],
                 ["P", ["CastShadows", "bool", "", "", 1], "SSSSI", []]]],
             ["TypeFlags", ["Light"], "S", []],
             ["GeometryVersion", [124], "I", []]]],
-        ["Geometry", [161455848, "::Geometry", "Mesh"], "LSS", [
+        ["Geometry", [152167664, "::Geometry", "Mesh"], "LSS", [
             ["Vertices", [[1.0, 1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 0.999999, 1.0, 0.999999, -1.000001, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0]], "d", []],
             ["PolygonVertexIndex", [[0, 1, 2, -4, 4, 7, 6, -6, 0, 4, 5, -2, 1, 5, 6, -3, 2, 6, 7, -4, 4, 0, 3, -8]], "i", []],
             ["GeometryVersion", [124], "I", []],
@@ -284,7 +258,7 @@
                 ["LayerElement", [], "", [
                     ["Type", ["LayerElementSmoothing"], "S", []],
                     ["TypedIndex", [0], "I", []]]]]]]],
-        ["Model", [161366432, "Camera Switcher::Model", "CameraSwitcher"], "LSS", [
+        ["Model", [152103776, "Camera Switcher::Model", "CameraSwitcher"], "LSS", [
             ["Version", [232], "I", []],
             ["Properties70", [], "", [
                 ["P", ["ScalingMin", "Vector3D", "Vector", "", 1.0, 1.0, 1.0], "SSSSDDD", []],
@@ -293,7 +267,7 @@
             ["MultiTake", [1], "I", []],
             ["Shading", [true], "C", []],
             ["Culling", ["CullingOff"], "S", []]]],
-        ["Model", [161364664, "Camera::Model", "Camera"], "LSS", [
+        ["Model", [152102088, "Camera::Model", "Camera"], "LSS", [
             ["Version", [232], "I", []],
             ["Properties70", [], "", [
                 ["P", ["ScalingMin", "Vector3D", "Vector", "", 1.0, 1.0, 1.0], "SSSSDDD", []],
@@ -313,7 +287,7 @@
             ["MultiTake", [0], "I", []],
             ["Shading", [true], "C", []],
             ["Culling", ["CullingOff"], "S", []]]],
-        ["Model", [161427352, "Lamp::Model", "Light"], "LSS", [
+        ["Model", [152161640, "Lamp::Model", "Light"], "LSS", [
             ["Version", [232], "I", []],
             ["Properties70", [], "", [
                 ["P", ["ScalingMin", "Vector3D", "Vector", "", 1.0, 1.0, 1.0], "SSSSDDD", []],
@@ -328,7 +302,7 @@
             ["MultiTake", [0], "I", []],
             ["Shading", [true], "C", []],
             ["Culling", ["CullingOff"], "S", []]]],
-        ["Model", [161437264, "Cube::Model", "Mesh"], "LSS", [
+        ["Model", [152171968, "Cube::Model", "Mesh"], "LSS", [
             ["Version", [232], "I", []],
             ["Properties70", [], "", [
                 ["P", ["ScalingMin", "Vector3D", "Vector", "", 1.0, 1.0, 1.0], "SSSSDDD", []],
@@ -340,14 +314,14 @@
             ["MultiTake", [1], "I", []],
             ["Shading", [true], "C", []],
             ["Culling", ["CullingOff"], "S", []]]],
-        ["Pose", [161441544, "BIND_POSES::Pose", "BindPose"], "LSS", [
+        ["Pose", [152199512, "BIND_POSES::Pose", "BindPose"], "LSS", [
             ["Type", ["BindPose"], "S", []],
             ["Version", [100], "I", []],
             ["NbPoseNodes", [1], "I", []],
             ["PoseNode", [], "", [
-                ["Node", [161437264], "L", []],
+                ["Node", [152171968], "L", []],
                 ["Matrix", [[7.5497901e-08, 0.0, -1.0, 0.0, -1.0, 0.0, -7.5497901e-08, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]], "d", []]]]]],
-        ["Material", [161521168, "Material::Material", ""], "LSS", [
+        ["Material", [152255504, "Material::Material", ""], "LSS", [
             ["Version", [102], "I", []],
             ["ShadingModel", ["lambert"], "S", []],
             ["MultiLayer", [0], "I", []],
@@ -369,7 +343,7 @@
                 ["P", ["Shininess", "double", "Number", "", 9.6], "SSSSD", []],
                 ["P", ["Opacity", "double", "Number", "", 1.0], "SSSSD", []],
                 ["P", ["Reflectivity", "double", "Number", "", 0.0], "SSSSD", []]]]]],
-        ["Material", [161484632, "unnamed::Material", ""], "LSS", [
+        ["Material", [152204256, "unnamed::Material", ""], "LSS", [
             ["Version", [102], "I", []],
             ["ShadingModel", ["phong"], "S", []],
             ["MultiLayer", [0], "I", []],
@@ -388,340 +362,15 @@
                 ["P", ["Specular", "ColorRGB", "Color", "", 0.16000000000000003, 0.16000000000000003, 0.16000000000000003], "SSSSDDD", []],
                 ["P", ["Shininess", "double", "Number", "", 80.0], "SSSSD", []],
                 ["P", ["Opacity", "double", "Number", "", 1.0], "SSSSD", []],
-                ["P", ["Reflectivity", "double", "Number", "", 0.0], "SSSSD", []]]]]],
-        ["AnimationStack", [161364008, "Default Take::AnimStack", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["LocalStop", "KTime", "Time", "", 479181389250], "SSSSL", []],
-                ["P", ["ReferenceStop", "KTime", "Time", "", 479181389250], "SSSSL", []]]]]],
-        ["AnimationLayer", [161441680, "Layer0::AnimLayer", ""], "LSS", []],
-        ["AnimationCurveNode", [161395344, "T::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 0.0], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 0.0], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 0.0], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161554160, "R::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", -90.0], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", -0.0], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 0.0], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161574808, "S::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 1.0], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 1.0], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 1.0], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161559480, "T::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 7.481131553649902], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 5.34366512298584], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 6.5076398849487305], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161542200, "R::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 23.240198135375977], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 142.3623504638672], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 34.21207046508789], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161598864, "S::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 1.0], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 0.9999999403953552], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 1.0], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161610840, "T::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 4.076245307922363], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 5.903861999511719], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", -1.0054539442062378], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161633856, "R::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 47.533573150634766], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 107.22076416015625], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 10.743664741516113], "SSSSD", []]]]]],
-        ["AnimationCurveNode", [161587328, "S::AnimCurveNode", ""], "LSS", [
-            ["Properties70", [], "", [
-                ["P", ["d", "Compound", "", ""], "SSSS", []],
-                ["P", ["d|X", "Number", "", "A+", 1.0], "SSSSD", []],
-                ["P", ["d|Y", "Number", "", "A+", 0.9999998807907104], "SSSSD", []],
-                ["P", ["d|Z", "Number", "", "A+", 1.0], "SSSSD", []]]]]],
-        ["AnimationCurve", [161398840, "::AnimCurve", ""], "LSS", [
-            ["Default", [0.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[0.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161397952, "::AnimCurve", ""], "LSS", [
-            ["Default", [0.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[0.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161549600, "::AnimCurve", ""], "LSS", [
-            ["Default", [0.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[0.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161565976, "::AnimCurve", ""], "LSS", [
-            ["Default", [-90.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[-90.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161565912, "::AnimCurve", ""], "LSS", [
-            ["Default", [-0.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[-0.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161570600, "::AnimCurve", ""], "LSS", [
-            ["Default", [0.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[0.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161575496, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161565120, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161575784, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161561864, "::AnimCurve", ""], "LSS", [
-            ["Default", [7.481131553649902], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[7.481131553649902]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161561552, "::AnimCurve", ""], "LSS", [
-            ["Default", [5.34366512298584], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[5.34366512298584]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161561064, "::AnimCurve", ""], "LSS", [
-            ["Default", [6.5076398849487305], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[6.5076398849487305]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161547272, "::AnimCurve", ""], "LSS", [
-            ["Default", [23.240198135375977], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[23.240198135375977]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161544584, "::AnimCurve", ""], "LSS", [
-            ["Default", [142.3623504638672], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[142.3623504638672]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161543072, "::AnimCurve", ""], "LSS", [
-            ["Default", [34.21207046508789], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[34.21207046508789]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161601272, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161604288, "::AnimCurve", ""], "LSS", [
-            ["Default", [0.9999999403953552], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[0.9999999403953552]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161599920, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161612840, "::AnimCurve", ""], "LSS", [
-            ["Default", [4.076245307922363], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[4.076245307922363]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161613936, "::AnimCurve", ""], "LSS", [
-            ["Default", [5.903861999511719], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[5.903861999511719]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161612432, "::AnimCurve", ""], "LSS", [
-            ["Default", [-1.0054539442062378], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[-1.0054539442062378]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161633792, "::AnimCurve", ""], "LSS", [
-            ["Default", [47.533573150634766], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[47.533573150634766]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161636192, "::AnimCurve", ""], "LSS", [
-            ["Default", [107.22076416015625], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[107.22076416015625]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161634856, "::AnimCurve", ""], "LSS", [
-            ["Default", [10.743664741516113], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[10.743664741516113]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161592704, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161592600, "::AnimCurve", ""], "LSS", [
-            ["Default", [0.9999998807907104], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[0.9999998807907104]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]],
-        ["AnimationCurve", [161588288, "::AnimCurve", ""], "LSS", [
-            ["Default", [1.0], "D", []],
-            ["KeyVer", [4007], "I", []],
-            ["KeyTime", [[1924423250]], "l", []],
-            ["KeyValueFloat", [[1.0]], "f", []],
-            ["KeyAttrFlags", [[4]], "i", []],
-            ["KeyAttrDataFloat", [[0.0, 0.0, 4.099946090724554e-31, 0.0]], "f", []],
-            ["KeyAttrRefCount", [[1]], "i", []]]]]],
+                ["P", ["Reflectivity", "double", "Number", "", 0.0], "SSSSD", []]]]]]]],
     ["Connections", [], "", [
-        ["C", ["OO", 161437264, 0], "SLL", []],
-        ["C", ["OO", 161427352, 0], "SLL", []],
-        ["C", ["OO", 161364664, 0], "SLL", []],
-        ["C", ["OO", 161217656, 161366432], "SLL", []],
-        ["C", ["OO", 161430624, 161364664], "SLL", []],
-        ["C", ["OP", 161559480, 161364664, "Lcl Translation"], "SLLS", []],
-        ["C", ["OP", 161542200, 161364664, "Lcl Rotation"], "SLLS", []],
-        ["C", ["OP", 161598864, 161364664, "Lcl Scaling"], "SLLS", []],
-        ["C", ["OO", 161425288, 161427352], "SLL", []],
-        ["C", ["OP", 161610840, 161427352, "Lcl Translation"], "SLLS", []],
-        ["C", ["OP", 161633856, 161427352, "Lcl Rotation"], "SLLS", []],
-        ["C", ["OP", 161587328, 161427352, "Lcl Scaling"], "SLLS", []],
-        ["C", ["OO", 161455848, 161437264], "SLL", []],
-        ["C", ["OO", 161521168, 161437264], "SLL", []],
-        ["C", ["OP", 161395344, 161437264, "Lcl Translation"], "SLLS", []],
-        ["C", ["OP", 161554160, 161437264, "Lcl Rotation"], "SLLS", []],
-        ["C", ["OP", 161574808, 161437264, "Lcl Scaling"], "SLLS", []],
-        ["C", ["OO", 161441680, 161364008], "SLL", []],
-        ["C", ["OO", 161395344, 161441680], "SLL", []],
-        ["C", ["OO", 161554160, 161441680], "SLL", []],
-        ["C", ["OO", 161574808, 161441680], "SLL", []],
-        ["C", ["OO", 161559480, 161441680], "SLL", []],
-        ["C", ["OO", 161542200, 161441680], "SLL", []],
-        ["C", ["OO", 161598864, 161441680], "SLL", []],
-        ["C", ["OO", 161610840, 161441680], "SLL", []],
-        ["C", ["OO", 161633856, 161441680], "SLL", []],
-        ["C", ["OO", 161587328, 161441680], "SLL", []],
-        ["C", ["OP", 161398840, 161395344, "d|X"], "SLLS", []],
-        ["C", ["OP", 161397952, 161395344, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161549600, 161395344, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161565976, 161554160, "d|X"], "SLLS", []],
-        ["C", ["OP", 161565912, 161554160, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161570600, 161554160, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161575496, 161574808, "d|X"], "SLLS", []],
-        ["C", ["OP", 161565120, 161574808, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161575784, 161574808, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161561864, 161559480, "d|X"], "SLLS", []],
-        ["C", ["OP", 161561552, 161559480, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161561064, 161559480, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161547272, 161542200, "d|X"], "SLLS", []],
-        ["C", ["OP", 161544584, 161542200, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161543072, 161542200, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161601272, 161598864, "d|X"], "SLLS", []],
-        ["C", ["OP", 161604288, 161598864, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161599920, 161598864, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161612840, 161610840, "d|X"], "SLLS", []],
-        ["C", ["OP", 161613936, 161610840, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161612432, 161610840, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161633792, 161633856, "d|X"], "SLLS", []],
-        ["C", ["OP", 161636192, 161633856, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161634856, 161633856, "d|Z"], "SLLS", []],
-        ["C", ["OP", 161592704, 161587328, "d|X"], "SLLS", []],
-        ["C", ["OP", 161592600, 161587328, "d|Y"], "SLLS", []],
-        ["C", ["OP", 161588288, 161587328, "d|Z"], "SLLS", []]]],
+        ["C", ["OO", 152171968, 0], "SLL", []],
+        ["C", ["OO", 152161640, 0], "SLL", []],
+        ["C", ["OO", 152102088, 0], "SLL", []],
+        ["C", ["OO", 151952504, 152103776], "SLL", []],
+        ["C", ["OO", 152157168, 152102088], "SLL", []],
+        ["C", ["OO", 152159720, 152161640], "SLL", []],
+        ["C", ["OO", 152167664, 152171968], "SLL", []],
+        ["C", ["OO", 152255504, 152171968], "SLL", []]]],
     ["Takes", [], "", [
-        ["Current", ["Default Take"], "S", []],
-        ["Take", ["Default Take"], "S", [
-            ["FileName", ["Default_Take.tak"], "S", []],
-            ["LocalTime", [0, 479181389250], "LL", []],
-            ["ReferenceTime", [0, 479181389250], "LL", []]]]]]]
+        ["Current", [""], "S", []]]]]
