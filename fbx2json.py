@@ -64,9 +64,6 @@ Note that key:value pairs aren't used since the id's are not
 ensured to be unique.
 """
 
-import json
-import array
-
 
 # ----------------------------------------------------------------------------
 # FBX Binary Parser
@@ -233,6 +230,9 @@ parse = parse
 # ----------------------------------------------------------------------------
 # JSON Converter
 # from pyfbx import parse_bin, data_types
+import json
+import array
+
 
 def fbx2json_property_as_string(prop, prop_type):
     if prop_type == data_types.STRING:
