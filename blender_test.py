@@ -23,7 +23,13 @@
 # FBX 7.1.0 loader for blender
 
 import os
-use_cycles = False
+use_cycles = True
+
+if use_cycles:
+    import sys
+    sys.path.append("/src/pyfbx_i42")  # XXX, wip
+    import blender_test_cycles_shader
+    cycles_material_wrap_map = {}
 
 try:
     import bpy
@@ -247,15 +253,30 @@ def blen_read_material(fbx_obj):
     fbx_props = elem_find_first(fbx_obj, b'Properties70')
     assert(fbx_props is not None)
 
+    ma_diff = elem_props_get_color_rgb(fbx_props, b'DiffuseColor', const_color_white)
+    ma_spec = elem_props_get_color_rgb(fbx_props, b'SpecularColor', const_color_white)
+    ma_alpha = elem_props_get_number(fbx_props, b'Opacity', 1.0)
+    ma_spec_intensity = ma.specular_intensity = elem_props_get_number(fbx_props, b'SpecularFactor', 0.25) * 2.0
+    ma_spec_hardness = elem_props_get_number(fbx_props, b'Shininess', 9.6)
+
     if use_cycles:
-        pass
+        # set cycles color
+        ma.diffuse_color = ma_diff
+
+        ma_wrap = blender_test_cycles_shader.CyclesShaderWrapper(ma)
+        ma_wrap.diffuse_color_set(ma_diff)
+        ma_wrap.specular_color_set([c * ma_spec_intensity for c in ma_spec])
+        ma_wrap.alpha_value_set(ma_alpha)
+        ma_wrap.hardness_value_set(ma_spec_hardness / 100.0)
+        
+        cycles_material_wrap_map[ma] = ma_wrap
     else:
         # TODO, number BumpFactor isnt used yet
-        ma.diffuse_color = elem_props_get_color_rgb(fbx_props, b'DiffuseColor', const_color_white)
-        ma.specular_color = elem_props_get_color_rgb(fbx_props, b'SpecularColor', const_color_white)
-        ma.alpha = elem_props_get_number(fbx_props, b'Opacity', 1.0)
-        ma.specular_intensity = elem_props_get_number(fbx_props, b'SpecularFactor', 0.25) * 2.0
-        ma.specular_hardness = elem_props_get_number(fbx_props, b'Shininess', 9.6) * 5.10 + 1.0 
+        ma.diffuse_color = ma_diff
+        ma.specular_color = ma_spec
+        ma.alpha = ma_alpha
+        ma.specular_intensity = ma_spec_intensity
+        ma.specular_hardness = ma_spec_hardness * 5.10 + 1.0
 
     # print(fbx_props)
     ma.use_fake_user = 1
@@ -417,18 +438,46 @@ def main():
             # print(material)
             for fbx_lnk, tex, fbx_lnk_type in connection_filter_reverse(fbx_uuid, b'Texture'):
                 # print("AAA", fbx_lnk_item)
+                
+                def get_bumpfac():
+                    fbx_props = elem_find_first(fbx_obj, b'Properties70')
+                    return elem_props_get_number(fbx_props, b'BumpFactor', 1.0)
+                
                 if use_cycles:
-                    pass
+                    if fbx_lnk_type.props[0] == b'OP':
+                        lnk_type = fbx_lnk_type.props[3]
+                        
+                        # print("OP", fbx_lnk_type)
+                        ma_wrap = cycles_material_wrap_map[material]
+                        
+                        # bypass texture
+                        image = tex.image
+
+                        if lnk_type == b'DiffuseColor':
+                            ma_wrap.diffuse_image_set(image)
+                        elif lnk_type == b'SpecularColor':
+                            ma_wrap.specular_image_set(image)
+                        elif lnk_type == b'ReflectionColor':
+                            pass  # TODO
+                        elif lnk_type == b'TransparentColor':
+                            ma_wrap.alpha_image_set(image)
+                        elif lnk_type == b'DiffuseFactor':
+                            pass  # TODO
+                        elif lnk_type == b'ShininessExponent':
+                            ma_wrap.hardness_image_set(image)
+                        elif lnk_type == b'NormalMap':
+                            ma_wrap.normal_image_set(image)
+                            ma_wrap.normal_factor_set(get_bumpfac())
+                        elif lnk_type == b'Bump':
+                            # ma_wrap.normal_factor_set(get_bumpfac())
+                            pass  # TODO
                 else:
                     if fbx_lnk_type.props[0] == b'OP':
-                        # print("OP", fbx_lnk_type)
-
+                        lnk_type = fbx_lnk_type.props[3]
                         mtex = material.texture_slots.add()
                         mtex.texture = tex
                         mtex.texture_coords = 'UV'
-                        lnk_type = fbx_lnk_type.props[3]
                         mtex.use_map_color_diffuse = False
-                        use_bumpfac = False
 
                         if lnk_type == b'DiffuseColor':
                             mtex.use_map_color_diffuse = True
@@ -447,17 +496,12 @@ def main():
                         elif lnk_type == b'NormalMap':
                             tex.use_normal_map = True  # not ideal!
                             mtex.use_map_normal = True
-                            use_bumpfac = True
+                            mtex.normal_factor = get_bumpfac()
                         elif lnk_type == b'Bump':
                             mtex.use_map_normal = True
-                            use_bumpfac = True
+                            mtex.normal_factor = get_bumpfac()
                         else:
                             print("WARNING: material link %r ignored" % lnk_type)
-
-                        if use_bumpfac:
-                            # need to get this from the material
-                            fbx_props = elem_find_first(fbx_obj, b'Properties70')
-                            mtex.normal_factor = elem_props_get_number(fbx_props, b'BumpFactor', 1.0)
 
 
     # sce = bpy.data.scenes[0]
