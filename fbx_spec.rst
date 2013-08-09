@@ -93,7 +93,7 @@ Where...
 * ``EndOffset`` is the distance from the beginning of the file to the end of the node record (i.e. the first byte of whatever comes next). This can be used to easily skip over unknown or not required records.
 * ``NumProperties`` is the number of properties in the value tuple associated with the node. A nested list as last element is *not* counted as property.
 * ``PropertyListLen`` is the length of the property list. This is the size required for storing ``NumProperties`` properties, which depends on the data type of the properties.
-* ``NameLen`` is the length fo the object name, in characters. The only case where this is 0 seems to be the lists top-level.
+* ``NameLen`` is the length of the object name, in characters. The only case where this is 0 seems to be the lists top-level.
 * ``Name`` is the name of the object. There is no zero-termination.
 * ``Property[n]`` is the ``n``'th property. For the format, see section *Property Record Format*. Properties are written sequentially and with no padding.
 * ``NestedList`` is the nested list, presence of which is indicated by a ``NULL``-*record* at the very end.
@@ -103,7 +103,7 @@ To determine whether a nested list entry exists, check if there is bytes left un
 If so, recursively read an object record directly following the last property. Behind that object record,
 there is 13 zero bytes, which should then match up with the `EndOffset`.
 (*Note*: it is not entirely clear why the NULL entry is required.
-This strongly hints at some FBX sublety or format feature that not known to the authors of this document ....)
+This strongly hints at some FBX subtlety or format feature that not known to the authors of this document ....)
 
 
 Property Record Format
@@ -150,7 +150,7 @@ For array types (second group), ``Data`` is more complex:
     ?               ?                Contents
     ============    =========        ====
 
-If ``Encoding`` is 0, the ``Contents`` is just `ArrayLength` times the array data type. If ``Encoding`` is 1,
+If ``Encoding`` is 0, the ``Contents`` is just ``ArrayLength`` times the array data type. If ``Encoding`` is 1,
 the ``Contents`` is a deflate/zip-compressed buffer of length ``CompressedLength`` bytes.
 The buffer can for example be decoded using zlib.
 
